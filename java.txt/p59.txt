@@ -1,0 +1,12 @@
+public class p59{
+/*
+58. Write a program in Java to display the first 5 natural numbers
+  */  public static void main(String[] args) {
+        // Display the first 5 natural numbers
+        System.out.println("First 5 natural numbers:");
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
