@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(153, 153, 153);
+  margin: 0; /* Remove default body margin */
+}
+
+.container {
+  background: rgb(153, 153, 153);
+  max-width: 80%;
+  margin: 0 auto;
+  font-style: italic;
+  overflow: hidden; /* Clearfix for floated children */
+}
+
+header {
+  background-color: #093452;
+  border-radius: 25px;
+  color: white;
+  padding: 15px;
+}
+
+nav {
+  background-color: #093452;
+  border-radius: 25px; /* Set the background color for the navigation bar */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center the navigation items */
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+}
+
+section {
+  font-size: 1em;
+  text-align: justify;
+}
+
+section p {
+  padding: 2em 0;
+  border-radius: 25px;
+}
+
+.btn a {
+  color: #3498db;
+  text-decoration: none;
+  background-color: #333;
+  border-radius: 25px;
+  display: inline-block; /* Prevent button from taking full width */
+  padding: 10px 15px; /* Add padding to the button */
+}
+
+.box {
+  width: 48%;
+  min-height: 100px; /* Use min-height to ensure content visibility */
+  margin: 1%;
+  background-color: #3498db;
+  border-radius: 25px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+
+#output-container {
+  width: 110%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.output-box {
+  width: 48%;
+  min-height: 200px; /* Use min-height to ensure content visibility */
+  margin: 1%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+footer p {
+  font-size: 16px;
+  background-color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  nav {
+    margin-top: 10px;
+    border-radius: 0; /* Adjust as needed for mobile view */
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .box,
+  .output-box {
+    width: 100%;
+  }
+}
