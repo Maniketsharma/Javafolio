@@ -1,0 +1,12 @@
+public class d2{
+    public static void main(String[] args) {
+        // Integer to be converted
+        int intValue = 123;
+
+        // Concatenating with an empty string
+        String stringValue = intValue + "";
+
+        // Display the result
+        System.out.println("Converted String value: " + stringValue);
+    }
+}

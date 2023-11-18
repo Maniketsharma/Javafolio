@@ -1,0 +1,12 @@
+public class d6{
+    public static void main(String[] args) {
+        // Float to be converted
+        float floatValue = 123.45f;
+
+        // Concatenating with an empty string
+        String stringValue = floatValue + "";
+
+        // Display the result
+        System.out.println("Converted String value: " + stringValue);
+    }
+}

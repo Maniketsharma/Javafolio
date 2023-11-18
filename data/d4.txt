@@ -1,0 +1,12 @@
+public class d4{
+    public static void main(String[] args) {
+        // Long to be converted
+        long longValue = 1234567890123456789L;
+
+        // Concatenating with an empty string
+        String stringValue = longValue + "";
+
+        // Display the result
+        System.out.println("Converted String value: " + stringValue);
+    }
+}

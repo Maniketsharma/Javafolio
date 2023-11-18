@@ -1,0 +1,73 @@
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class e6 extends JFrame {
+
+    private JCheckBox checkBox;
+    private JLabel resultLabel;
+
+    public e6() {
+        // Set the frame title
+        setTitle("CheckBox Example");
+
+        // Create a JCheckBox
+        checkBox = new JCheckBox("Enable Feature");
+
+        // Create a JLabel to display the result
+        resultLabel = new JLabel("Checkbox State: " + checkBox.isSelected());
+
+        // Create buttons
+        JButton getStateButton = new JButton("Get State");
+        JButton setStateButton = new JButton("Set State");
+
+        // Add action listeners to the buttons
+        getStateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Get and display the state of the checkbox
+                resultLabel.setText("Checkbox State: " + checkBox.isSelected());
+            }
+        });
+
+        setStateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Set the state of the checkbox
+                checkBox.setSelected(!checkBox.isSelected());
+                resultLabel.setText("Checkbox State: " + checkBox.isSelected());
+            }
+        });
+
+        // Set layout manager to null to manually position components
+        setLayout(null);
+
+        // Set the position and size of components
+        checkBox.setBounds(20, 20, 150, 30);
+        getStateButton.setBounds(20, 60, 120, 30);
+        setStateButton.setBounds(150, 60, 120, 30);
+        resultLabel.setBounds(20, 100, 250, 30);
+
+        // Add components to the frame
+        add(checkBox);
+        add(getStateButton);
+        add(setStateButton);
+        add(resultLabel);
+
+        // Set frame properties
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the CheckBoxExample
+        e6 frame = new e6();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

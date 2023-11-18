@@ -1,0 +1,42 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class e3 extends JFrame {
+
+    public e3() {
+        // Set the frame title
+        setTitle("Image Button Example");
+
+        // Create a button
+        JButton imageButton = new JButton("Click Me!");
+
+        // Create an action listener for the button
+        imageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Display an image when the button is clicked
+                ImageIcon icon = new ImageIcon("path/to/your/image.jpg"); // Replace with the actual path to your image file
+                imageButton.setIcon(icon);
+            }
+        });
+
+        // Add the button to the frame
+        add(imageButton);
+
+        // Set frame properties
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the ImageButtonExample
+        e3 frame = new e3();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

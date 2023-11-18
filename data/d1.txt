@@ -1,0 +1,14 @@
+public class d1{
+    public static void main(String[] args) {
+        // String containing a number
+        String strNumber = "123";
+
+        // Using valueOf method to convert String to int
+        try {
+            int intValue = Integer.valueOf(strNumber);
+            System.out.println("Converted int value: " + intValue);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

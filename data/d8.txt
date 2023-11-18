@@ -1,0 +1,23 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+class d8{
+    public static void main(String[] args) {
+        // String containing a date
+        String strDate = "2023-11-17"; // Format: "yyyy-MM-dd"
+
+        // Define the date format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            // Parse the String to Date
+            Date dateValue = dateFormat.parse(strDate);
+
+            // Display the result
+            System.out.println("Converted Date value: " + dateValue);
+        } catch (ParseException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

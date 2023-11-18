@@ -1,0 +1,48 @@
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
+
+public class e4{
+
+    public static void main(String[] args) {
+        // Create a JFrame
+        JFrame frame = new JFrame("Email Validation Example");
+
+        // Create a JTextField for email input
+        JTextField emailField = new JTextField();
+        emailField.setColumns(20); // Set the preferred width
+
+        // Add a KeyListener to the JTextField for email validation
+        emailField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char inputChar = e.getKeyChar();
+
+                // Allow backspace and valid email characters
+                if (inputChar == KeyEvent.VK_BACK_SPACE || isValidEmailCharacter(inputChar)) {
+                    // Do nothing, allow the input
+                } else {
+                    e.consume(); // Consume the event, don't allow the input
+                }
+            }
+        });
+
+        // Add the JTextField to the frame
+        frame.add(emailField);
+
+        // Set frame properties
+        frame.setSize(400, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+
+    // Method to check if the character is a valid email character
+    private static boolean isValidEmailCharacter(char ch) {
+        // Valid email characters include alphanumeric, dot, underscore, hyphen
+        return Character.isLetterOrDigit(ch) || ch == '.' || ch == '_' || ch == '-';
+    }
+}

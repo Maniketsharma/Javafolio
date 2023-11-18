@@ -1,0 +1,61 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class e7 extends JFrame {
+
+    private JLabel label;
+
+    public e7() {
+        // Set the frame title
+        setTitle("Mouse Event Example");
+
+        // Create a JLabel
+        label = new JLabel("No Mouse Event");
+
+        // Add a MouseListener to the JLabel
+        label.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                label.setText("Mouse Clicked at (" + e.getX() + ", " + e.getY() + ")");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                label.setText("Mouse Pressed at (" + e.getX() + ", " + e.getY() + ")");
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                label.setText("Mouse Released at (" + e.getX() + ", " + e.getY() + ")");
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                label.setText("Mouse Entered");
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                label.setText("Mouse Exited");
+            }
+        });
+
+        // Add the JLabel to the frame
+        add(label);
+
+        // Set frame properties
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the MouseEventExample
+        e7 frame = new e7();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

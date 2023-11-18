@@ -1,0 +1,14 @@
+public class d7{
+    public static void main(String[] args) {
+        // String containing a number
+        String strNumber = "123.456";
+
+        // Using parseDouble method to convert String to double
+        try {
+            double doubleValue = Double.parseDouble(strNumber);
+            System.out.println("Converted double value: " + doubleValue);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

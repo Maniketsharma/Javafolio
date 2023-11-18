@@ -1,0 +1,49 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+import java.awt.FlowLayout;
+
+public class e10 extends JFrame {
+
+    public e10() {
+        // Set the frame title
+        setTitle("Button Border Example");
+
+        // Create a panel with FlowLayout
+        JPanel panel = new JPanel(new FlowLayout());
+
+        // Create buttons
+        JButton button1 = new JButton("Button 1");
+        JButton button2 = new JButton("Button 2");
+        JButton button3 = new JButton("Button 3");
+
+        // Set borders to the buttons
+        Border border = BorderFactory.createEtchedBorder(); // You can customize the border type
+        button1.setBorder(border);
+        button2.setBorder(border);
+        button3.setBorder(border);
+
+        // Add buttons to the panel
+        panel.add(button1);
+        panel.add(button2);
+        panel.add(button3);
+
+        // Add the panel to the frame
+        add(panel);
+
+        // Set frame properties
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the ButtonBorderExample
+        e10 frame = new e10();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

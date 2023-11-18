@@ -1,0 +1,80 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.CardLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class e9{
+
+    private JFrame mainFrame;
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+
+    public e9() {
+        // Create the main frame
+        mainFrame = new JFrame("Frame Switch Example");
+        mainFrame.setSize(300, 200);
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setLocationRelativeTo(null);
+
+        // Create a panel with CardLayout to switch between frames
+        cardPanel = new JPanel();
+        cardLayout = new CardLayout();
+        cardPanel.setLayout(cardLayout);
+
+        // Create two frames and add them to the cardPanel
+        cardPanel.add(createFrame("Frame 1", "This is Frame 1"), "frame1");
+        cardPanel.add(createFrame("Frame 2", "This is Frame 2"), "frame2");
+
+        // Create buttons to switch between frames
+        JButton showFrame1Button = new JButton("Show Frame 1");
+        JButton showFrame2Button = new JButton("Show Frame 2");
+
+        // Add action listeners to the buttons
+        showFrame1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "frame1");
+            }
+        });
+
+        showFrame2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cardLayout.show(cardPanel, "frame2");
+            }
+        });
+
+        // Create a panel for buttons
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(showFrame1Button);
+        buttonPanel.add(showFrame2Button);
+
+        // Add panels to the main frame
+        mainFrame.add(cardPanel);
+        mainFrame.add(buttonPanel, "South");
+
+        // Set the initial frame to display
+        cardLayout.show(cardPanel, "frame1");
+    }
+
+    private JPanel createFrame(String title, String message) {
+        JPanel framePanel = new JPanel();
+        framePanel.add(new JLabel(message));
+        return framePanel;
+    }
+
+    public void display() {
+        mainFrame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of FrameSwitchExample
+        e9 sw = new e9();
+
+        // Display the main frame
+        sw.display();
+    }
+}

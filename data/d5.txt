@@ -1,0 +1,14 @@
+public class d5{
+    public static void main(String[] args) {
+        // String containing a number
+        String strNumber = "123.45";
+
+        // Using valueOf method to convert String to float
+        try {
+            float floatValue = Float.valueOf(strNumber);
+            System.out.println("Converted float value: " + floatValue);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

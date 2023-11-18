@@ -1,0 +1,12 @@
+public class d9{
+    public static void main(String[] args) {
+        // Double to be converted
+        double doubleValue = 123.456;
+
+        // Using Double.toString() method
+        String stringValue = Double.toString(doubleValue);
+
+        // Display the result
+        System.out.println("Converted String value: " + stringValue);
+    }
+}

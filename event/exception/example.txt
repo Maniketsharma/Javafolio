@@ -1,0 +1,22 @@
+PS D:\dbms\webjava\javasite\event\exception> notepad ex3.java
+PS D:\dbms\webjava\javasite\event\exception> javac ex3.java
+ex3.java:26: '{' expected
+        try (Scanner scanner = new Scanner(file)) {
+           ^
+ex3.java:26: ')' expected
+        try (Scanner scanner = new Scanner(file)) {
+                    ^
+ex3.java:26: ';' expected
+        try (Scanner scanner = new Scanner(file)) {
+                                                ^
+ex3.java:26: 'try' without 'catch' or 'finally'
+        try (Scanner scanner = new Scanner(file)) {
+        ^
+ex3.java:34: reached end of file while parsing
+}
+ ^
+5 errors
+PS D:\dbms\webjava\javasite\event\exception> notepad example.txt
+PS D:\dbms\webjava\javasite\event\exception>
+
+

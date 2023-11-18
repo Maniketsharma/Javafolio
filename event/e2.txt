@@ -1,0 +1,65 @@
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JPasswordField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class e2 extends JFrame {
+
+    private JTextArea textArea;
+    private JPasswordField passwordField;
+
+    public e2() {
+        // Set the frame title
+        setTitle("Text Area and Password Field Example");
+
+        // Create components
+        textArea = new JTextArea(5, 20); // 5 rows, 20 columns
+        passwordField = new JPasswordField(20);
+        JLabel textAreaLabel = new JLabel("Text Area:");
+        JLabel passwordFieldLabel = new JLabel("Password:");
+
+        // Create a panel for the buttons
+        JPanel buttonPanel = new JPanel();
+        JButton displayButton = new JButton("Display Contents");
+
+        // Add an action listener to the display button
+        displayButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Display the contents of the text area and password field
+                String textAreaContents = textArea.getText();
+                char[] password = passwordField.getPassword();
+                String passwordContents = new String(password);
+
+                System.out.println("Text Area Contents: " + textAreaContents);
+                System.out.println("Password Field Contents: " + passwordContents);
+            }
+        });
+
+        // Add components to the frame
+        add(textAreaLabel, BorderLayout.WEST);
+        add(textArea, BorderLayout.CENTER);
+        add(passwordFieldLabel, BorderLayout.NORTH);
+        add(passwordField, BorderLayout.SOUTH);
+        buttonPanel.add(displayButton);
+        add(buttonPanel, BorderLayout.EAST);
+
+        // Set frame properties
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the TextAreaPasswordFieldExample
+        e2 frame = new e2();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

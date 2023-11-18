@@ -1,0 +1,57 @@
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.FlowLayout;
+
+public class e8 extends JFrame {
+
+    public e8() {
+        // Set the frame title
+        setTitle("Check Boxes and Radio Buttons Example");
+
+        // Create a panel with FlowLayout
+        JPanel panel = new JPanel(new FlowLayout());
+
+        // Create checkboxes
+        JCheckBox checkBox1 = new JCheckBox("Option 1");
+        JCheckBox checkBox2 = new JCheckBox("Option 2");
+        JCheckBox checkBox3 = new JCheckBox("Option 3");
+
+        // Create radio buttons
+        JRadioButton radioButton1 = new JRadioButton("Radio 1");
+        JRadioButton radioButton2 = new JRadioButton("Radio 2");
+        JRadioButton radioButton3 = new JRadioButton("Radio 3");
+
+        // Create a button group for radio buttons
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(radioButton1);
+        buttonGroup.add(radioButton2);
+        buttonGroup.add(radioButton3);
+
+        // Add checkboxes and radio buttons to the panel
+        panel.add(checkBox1);
+        panel.add(checkBox2);
+        panel.add(checkBox3);
+        panel.add(radioButton1);
+        panel.add(radioButton2);
+        panel.add(radioButton3);
+
+        // Add the panel to the frame
+        add(panel);
+
+        // Set frame properties
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the CheckBoxRadioButtonExample
+        e8 frame = new e8();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

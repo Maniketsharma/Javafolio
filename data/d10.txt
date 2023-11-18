@@ -1,0 +1,18 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class d10{
+    public static void main(String[] args) {
+        // Create a Date object
+        Date dateValue = new Date();
+
+        // Define the date format
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        // Format the Date to String
+        String strDate = dateFormat.format(dateValue);
+
+        // Display the result
+        System.out.println("Converted String value: " + strDate);
+    }
+}

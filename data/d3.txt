@@ -1,0 +1,14 @@
+public class d3{
+    public static void main(String[] args) {
+        // String containing a number
+        String strNumber = "1234567890123456789";
+
+        // Using parseLong method to convert String to long
+        try {
+            long longValue = Long.parseLong(strNumber);
+            System.out.println("Converted long value: " + longValue);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

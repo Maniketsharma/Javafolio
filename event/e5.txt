@@ -1,0 +1,55 @@
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class e5 extends JFrame {
+
+    private JTextArea textArea;
+
+    public e5() {
+        // Set the frame title
+        setTitle("Keyboard Event Example");
+
+        // Create a JTextArea
+        textArea = new JTextArea();
+        textArea.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Invoked when a key is typed
+                char c = e.getKeyChar();
+                textArea.append("Key Typed: " + c + "\n");
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Invoked when a key is pressed
+                int keyCode = e.getKeyCode();
+                textArea.append("Key Pressed: " + KeyEvent.getKeyText(keyCode) + " (" + keyCode + ")\n");
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // Invoked when a key is released
+                int keyCode = e.getKeyCode();
+                textArea.append("Key Released: " + KeyEvent.getKeyText(keyCode) + " (" + keyCode + ")\n");
+            }
+        });
+
+        // Add the JTextArea to the frame
+        add(textArea);
+
+        // Set frame properties
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the KeyboardEventExample
+        e5 frame = new e5();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}

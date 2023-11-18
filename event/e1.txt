@@ -1,0 +1,29 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class e1 extends JFrame {
+
+    public e1() {
+        // Set the frame title
+        setTitle("Text Display Frame");
+
+        // Create a label with the desired text
+        JLabel label = new JLabel("Hello, Java Swing!");
+
+        // Add the label to the frame
+        add(label);
+
+        // Set frame properties
+        setSize(300, 200); // Set the size of the frame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the application when the frame is closed
+        setLocationRelativeTo(null); // Center the frame on the screen
+    }
+
+    public static void main(String[] args) {
+        // Create an instance of the TextDisplayFrame
+        e1 frame = new e1();
+
+        // Set the frame to be visible
+        frame.setVisible(true);
+    }
+}
