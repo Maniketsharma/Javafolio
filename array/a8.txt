@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class a8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input dimensions of the matrix
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+
+        // Input matrix
+        System.out.println("Enter elements for the matrix:");
+        int[][] matrix = inputMatrix(scanner, rows, columns);
+
+        // Find frequency of odd and even numbers
+        int oddFrequency = countOddNumbers(matrix);
+        int evenFrequency = countEvenNumbers(matrix);
+
+        // Print result
+        System.out.println("\nFrequency of Odd Numbers: " + oddFrequency);
+        System.out.println("Frequency of Even Numbers: " + evenFrequency);
+
+        scanner.close();
+    }
+
+    private static int[][] inputMatrix(Scanner scanner, int rows, int columns) {
+        int[][] matrix = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("Enter element at position [" + (i + 1) + "][" + (j + 1) + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        return matrix;
+    }
+
+    private static int countOddNumbers(int[][] matrix) {
+        int oddCount = 0;
+        for (int[] row : matrix) {
+            for (int element : row) {
+                if (element % 2 != 0) {
+                    oddCount++;
+                }
+            }
+        }
+        return oddCount;
+    }
+
+    private static int countEvenNumbers(int[][] matrix) {
+        int evenCount = 0;
+        for (int[] row : matrix) {
+            for (int element : row) {
+                if (element % 2 == 0) {
+                    evenCount++;
+                }
+            }
+        }
+        return evenCount;
+    }
+}

@@ -1,0 +1,19 @@
+
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl6 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to blue
+        g.setColor(Color.BLUE);
+
+        // Draw a filled square with top-left corner at (50, 50) and side length 80
+        g.fillRect(50, 50, 80, 80);
+    }
+}
+
+/*<applet code="apl6.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

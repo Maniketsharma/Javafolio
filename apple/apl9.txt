@@ -1,0 +1,18 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl9 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to blue
+        g.setColor(Color.BLUE);
+
+        // Draw a filled oval with top-left corner at (50, 50) and dimensions 100x80
+        g.fillOval(50, 50, 100, 80);
+    }
+}
+
+/*<applet code="apl9.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

@@ -1,0 +1,19 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl10 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to green
+        g.setColor(Color.GREEN);
+
+        // Draw a filled arc with top-left corner at (50, 50), dimensions 100x80,
+        // starting angle 45 degrees, and spanning an arc of 90 degrees
+        g.fillArc(50, 50, 100, 80, 45, 90);
+    }
+}
+
+/*<applet code="apl10.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

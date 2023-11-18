@@ -1,0 +1,22 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl4 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to green
+        g.setColor(Color.GREEN);
+
+        // Define the coordinates of the polygon
+        int[] xPoints = {50, 100, 150, 100};
+        int[] yPoints = {50, 100, 50, 0};
+
+        // Draw a filled polygon
+        g.fillPolygon(xPoints, yPoints, 4);
+    }
+}
+
+/*<applet code="apl4.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

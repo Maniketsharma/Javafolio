@@ -1,0 +1,12 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class apl2 extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 20, 20);
+    }
+}
+/*<applet code="apl2.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

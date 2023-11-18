@@ -1,0 +1,37 @@
+
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl7 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to red
+        g.setColor(Color.RED);
+
+        // Draw the outermost circle
+        g.fillOval(20, 20, 160, 160);
+
+        // Set the color to green
+        g.setColor(Color.GREEN);
+
+        // Draw the second circle
+        g.fillOval(40, 40, 120, 120);
+
+        // Set the color to blue
+        g.setColor(Color.BLUE);
+
+        // Draw the third circle
+        g.fillOval(60, 60, 80, 80);
+
+        // Set the color to black
+        g.setColor(Color.BLACK);
+
+        // Draw the innermost circle
+        g.fillOval(80, 80, 40, 40);
+    }
+}
+
+/*<applet code="apl7.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

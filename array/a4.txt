@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class a4{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input dimensions of matrices
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns: ");
+        int columns = scanner.nextInt();
+
+        // Input first matrix
+        System.out.println("Enter elements for the first matrix:");
+        int[][] matrix1 = inputMatrix(scanner, rows, columns);
+
+        // Input second matrix
+        System.out.println("Enter elements for the second matrix:");
+        int[][] matrix2 = inputMatrix(scanner, rows, columns);
+
+        // Subtract matrices
+        int[][] differenceMatrix = subtractMatrices(matrix1, matrix2);
+
+        // Print result
+        System.out.println("\nDifference of the matrices:");
+        printMatrix(differenceMatrix);
+
+        scanner.close();
+    }
+
+    private static int[][] inputMatrix(Scanner scanner, int rows, int columns) {
+        int[][] matrix = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("Enter element at position [" + (i + 1) + "][" + (j + 1) + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        return matrix;
+    }
+
+    private static int[][] subtractMatrices(int[][] matrix1, int[][] matrix2) {
+        int rows = matrix1.length;
+        int columns = matrix1[0].length;
+        int[][] differenceMatrix = new int[rows][columns];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                differenceMatrix[i][j] = matrix1[i][j] - matrix2[i][j];
+            }
+        }
+
+        return differenceMatrix;
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + "\t");
+            }
+            System.out.println();
+        }
+    }
+}

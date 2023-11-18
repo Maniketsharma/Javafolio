@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class a6{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input dimensions of the square matrix
+        System.out.print("Enter the size of the square matrix: ");
+        int size = scanner.nextInt();
+
+        // Input the square matrix
+        System.out.println("Enter elements for the square matrix:");
+        int[][] matrix = inputSquareMatrix(scanner, size);
+
+        // Display lower triangular matrix
+        System.out.println("\nLower Triangular Matrix:");
+        displayLowerTriangularMatrix(matrix);
+
+        scanner.close();
+    }
+
+    private static int[][] inputSquareMatrix(Scanner scanner, int size) {
+        int[][] matrix = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print("Enter element at position [" + (i + 1) + "][" + (j + 1) + "]: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        return matrix;
+    }
+
+    private static void displayLowerTriangularMatrix(int[][] matrix) {
+        int size = matrix.length;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (j > i) {
+                    // Display 0 for elements above the main diagonal
+                    System.out.print("0\t");
+                } else {
+                    System.out.print(matrix[i][j] + "\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+}

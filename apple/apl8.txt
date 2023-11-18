@@ -1,0 +1,17 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl8 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to black
+        g.setColor(Color.BLACK);
+
+        // Draw a line from (20, 20) to (180, 180)
+        g.drawLine(20, 20, 180, 180);
+    }
+}
+/*<applet code="apl8.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/

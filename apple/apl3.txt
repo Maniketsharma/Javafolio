@@ -1,0 +1,17 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class apl3 extends Applet {
+    public void paint(Graphics g) {
+        // Set the color to blue
+        g.setColor(Color.BLUE);
+
+        // Draw a filled circle with center coordinates (100, 100) and radius 50
+        g.fillOval(50, 50, 100, 100);
+    }
+}
+/*<applet code="apl3.class" width="200" height="50">
+        Your browser does not support the Java applet tag.
+    </applet>
+*/
