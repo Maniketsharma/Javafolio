@@ -1,0 +1,29 @@
+public class f12{
+    public static void main(String[] args) {
+        String str1 = "aeiou";
+        String str2 = "hello";
+
+        boolean allVowels1 = areAllCharactersVowels(str1);
+        boolean allVowels2 = areAllCharactersVowels(str2);
+
+        System.out.println("All characters in \"" + str1 + "\" are vowels: " + allVowels1);
+        System.out.println("All characters in \"" + str2 + "\" are vowels: " + allVowels2);
+    }
+
+    public static boolean areAllCharactersVowels(String str) {
+        // Convert the string to lowercase for case-insensitive comparison
+        str = str.toLowerCase();
+
+        // Check if each character in the string is a vowel
+        for (int i = 0; i < str.length(); i++) {
+            char currentChar = str.charAt(i);
+            if (currentChar != 'a' && currentChar != 'e' && currentChar != 'i'
+                    && currentChar != 'o' && currentChar != 'u') {
+                return false;
+            }
+        }
+
+        // If all characters are vowels, return true
+        return true;
+    }
+}

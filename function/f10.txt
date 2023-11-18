@@ -1,0 +1,16 @@
+public class f10{
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 6;
+        int num3 = 7;
+
+        boolean areConsecutive = areIntegersConsecutive(num1, num2, num3);
+
+        System.out.println("Are the numbers consecutive? " + areConsecutive);
+    }
+
+    public static boolean areIntegersConsecutive(int a, int b, int c) {
+        // Check if the numbers are consecutive
+        return (b == a + 1 && c == b + 1) || (a == b + 1 && c == b + 2);
+    }
+}

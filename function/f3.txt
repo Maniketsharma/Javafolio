@@ -1,0 +1,29 @@
+public class f3{
+    public static void main(String[] args) {
+        String str1 = "abc";
+        String str2 = "abcd";
+
+        displayMiddleCharacters(str1);
+        displayMiddleCharacters(str2);
+    }
+
+    public static void displayMiddleCharacters(String str) {
+        int length = str.length();
+
+        if (length == 0) {
+            System.out.println("The string is empty.");
+        } else {
+            int middleIndex = length / 2;
+
+            System.out.print("Middle character(s) of \"" + str + "\": ");
+
+            if (length % 2 == 0) {
+                // If the length is even, there is one middle character
+                System.out.println(str.charAt(middleIndex - 1) + " " + str.charAt(middleIndex));
+            } else {
+                // If the length is odd, there are two middle characters
+                System.out.println(str.charAt(middleIndex));
+            }
+        }
+    }
+}

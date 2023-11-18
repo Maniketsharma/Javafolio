@@ -1,0 +1,31 @@
+public class f9{
+    public static void main(String[] args) {
+        int number1 = 12345;
+        int number2 = 222222;
+
+        int count1 = countDigit2(number1);
+        int count2 = countDigit2(number2);
+
+        System.out.println("Number of occurrences of digit '2' in " + number1 + ": " + count1);
+        System.out.println("Number of occurrences of digit '2' in " + number2 + ": " + count2);
+    }
+
+    public static int countDigit2(int number) {
+        int count = 0;
+
+        while (number > 0) {
+            // Get the last digit of the number
+            int digit = number % 10;
+
+            // Check if the digit is 2
+            if (digit == 2) {
+                count++;
+            }
+
+            // Remove the last digit
+            number /= 10;
+        }
+
+        return count;
+    }
+}

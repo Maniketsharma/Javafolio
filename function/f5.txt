@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class f5{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the principal amount: ");
+        double principal = scanner.nextDouble();
+
+        System.out.print("Enter the annual interest rate (in percentage): ");
+        double annualInterestRate = scanner.nextDouble();
+
+        System.out.print("Enter the number of years: ");
+        int numberOfYears = scanner.nextInt();
+
+        double futureValue = calculateFutureValue(principal, annualInterestRate, numberOfYears);
+
+        System.out.println("The future investment value after " + numberOfYears + " years is: $" + futureValue);
+
+        scanner.close();
+    }
+
+    public static double calculateFutureValue(double principal, double annualInterestRate, int numberOfYears) {
+        // Convert the annual interest rate to a decimal
+        double interestRateDecimal = annualInterestRate / 100.0;
+
+        // Calculate the future investment value using the formula: FV = P * (1 + r)^n
+        double futureValue = principal * Math.pow(1 + interestRateDecimal, numberOfYears);
+
+        // Round the result to two decimal places
+        futureValue = Math.round(futureValue * 100.0) / 100.0;
+
+        return futureValue;
+    }
+}

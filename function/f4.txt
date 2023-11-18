@@ -1,0 +1,25 @@
+public class f4{
+    public static void main(String[] args) {
+        String sentence1 = "This is a sample sentence.";
+        String sentence2 = "   Extra    spaces   between words.   ";
+
+        int wordCount1 = countWords(sentence1);
+        int wordCount2 = countWords(sentence2);
+
+        System.out.println("Number of words in sentence1: " + wordCount1);
+        System.out.println("Number of words in sentence2: " + wordCount2);
+    }
+
+    public static int countWords(String input) {
+        if (input == null || input.trim().isEmpty()) {
+            // If the input is null or empty after trimming, return 0
+            return 0;
+        }
+
+        // Split the input string into words using whitespace as a delimiter
+        String[] words = input.trim().split("\\s+");
+
+        // Return the count of words
+        return words.length;
+    }
+}

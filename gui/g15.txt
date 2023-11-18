@@ -1,0 +1,82 @@
+import java.awt.*;
+import java.awt.event.*;
+
+class CustomLayoutManager implements LayoutManager {
+    private static final int HGAP = 10;
+    private static final int VGAP = 10;
+
+    @Override
+    public void addLayoutComponent(String name, Component comp) {}
+
+    @Override
+    public void removeLayoutComponent(Component comp) {}
+
+    @Override
+    public Dimension preferredLayoutSize(Container parent) {
+        return new Dimension(300, 200);
+    }
+
+    @Override
+    public Dimension minimumLayoutSize(Container parent) {
+        return new Dimension(100, 100);
+    }
+
+    @Override
+    public void layoutContainer(Container parent) {
+        int currentX = HGAP;
+        int currentY = VGAP;
+
+        Component[] components = parent.getComponents();
+
+        for (Component component : components) {
+            Dimension size = component.getPreferredSize();
+            component.setBounds(currentX, currentY, size.width, size.height);
+
+            currentX += size.width + HGAP;
+
+            // If the next component exceeds the width of the parent, move to the next row
+            if (currentX + size.width > parent.getWidth()) {
+                currentX = HGAP;
+                currentY += size.height + VGAP;
+            }
+        }
+    }
+}
+
+public class g15{
+    private Frame frame;
+    private List list;
+
+    public g15() {
+        frame = new Frame("AWT List with Custom Layout Example");
+        list = new List();
+
+        // Adding items to the list
+        list.add("Item 1");
+        list.add("Item 2");
+        list.add("Item 3");
+        list.add("Item 4");
+        list.add("Item 5");
+
+        // Setting the custom layout manager
+        frame.setLayout(new CustomLayoutManager());
+
+        // Adding the list to the frame
+        frame.add(list);
+
+        // Setting up the frame
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+
+        // Handling window close event
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new g15();
+    }
+}

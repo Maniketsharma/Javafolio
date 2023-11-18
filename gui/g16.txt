@@ -1,0 +1,33 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class g16{
+    private Frame frame;
+    private TextArea textArea;
+
+    public g16() {
+        frame = new Frame("AWT TextArea Example");
+        textArea = new TextArea("This is a TextArea.");
+
+        // Setting the layout manager to FlowLayout
+        frame.setLayout(new FlowLayout());
+
+        // Adding the TextArea to the frame
+        frame.add(textArea);
+
+        // Setting up the frame
+        frame.setSize(300, 200);
+        frame.setVisible(true);
+
+        // Handling window close event
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new g16();
+    }
+}

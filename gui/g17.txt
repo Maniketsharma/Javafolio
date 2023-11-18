@@ -1,0 +1,34 @@
+import java.awt.*;
+
+public class g17 extends Frame {
+    private TextArea textArea;
+
+    public g17() {
+        // Set the layout manager to null for custom layout
+        setLayout(null);
+
+        // Create a TextArea
+        textArea = new TextArea();
+        textArea.setBounds(20, 40, 300, 200); // Set the bounds (x, y, width, height)
+
+        // Add the TextArea to the frame
+        add(textArea);
+
+        // Set frame properties
+        setTitle("Custom Layout Demo");
+        setSize(350, 300);
+        setResizable(false);
+        setVisible(true);
+
+        // Handle window close event
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new g17();
+    }
+}

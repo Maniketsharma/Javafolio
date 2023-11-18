@@ -1,0 +1,23 @@
+public class f6{
+    public static void main(String[] args) {
+        char startChar = 'A';
+        char endChar = 'P';
+
+        printCharactersBetween(startChar, endChar);
+    }
+
+    public static void printCharactersBetween(char startChar, char endChar) {
+        if (startChar > endChar) {
+            System.out.println("Start character should be less than or equal to end character.");
+            return;
+        }
+
+        System.out.print("Characters between " + startChar + " and " + endChar + ": ");
+
+        for (char currentChar = startChar; currentChar <= endChar; currentChar++) {
+            System.out.print(currentChar + " ");
+        }
+
+        System.out.println();
+    }
+}

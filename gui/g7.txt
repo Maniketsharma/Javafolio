@@ -1,0 +1,76 @@
+import java.awt.Checkbox;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.LayoutManager;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class g7{
+
+    public static void main(String[] args) {
+        // Create a frame
+        CustomFrame frame = new CustomFrame("AWT CustomLayout Checkbox Example");
+
+        // Set the layout manager to CustomLayout
+        frame.setLayout(new CustomLayout());
+
+        // Create a Checkbox
+        Checkbox checkbox = new Checkbox("Enable Feature");
+
+        // Add the Checkbox to the frame with custom layout
+        frame.add(checkbox);
+
+        // Set frame properties
+        frame.setSize(300, 100); // Set the size of the frame
+        frame.setVisible(true); // Make the frame visible
+
+        // Handle closing the frame
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent windowEvent) {
+                System.exit(0);
+            }
+        });
+    }
+}
+
+class CustomLayout implements LayoutManager {
+
+    @Override
+    public void addLayoutComponent(String name, java.awt.Component comp) {
+        // No implementation needed
+    }
+
+    @Override
+    public void removeLayoutComponent(java.awt.Component comp) {
+        // No implementation needed
+    }
+
+    @Override
+    public Dimension preferredLayoutSize(Container parent) {
+        return new Dimension(200, 50);
+    }
+
+    @Override
+    public Dimension minimumLayoutSize(Container parent) {
+        return new Dimension(100, 30);
+    }
+
+    @Override
+    public void layoutContainer(Container parent) {
+        java.awt.Component component = parent.getComponent(0); // Assume only one component
+
+        Dimension parentSize = parent.getSize();
+        Dimension componentSize = component.getPreferredSize();
+
+        int x = (parentSize.width - componentSize.width) / 2;
+        int y = (parentSize.height - componentSize.height) / 2;
+
+        component.setBounds(x, y, componentSize.width, componentSize.height);
+    }
+}
+
+class CustomFrame extends java.awt.Frame {
+    public CustomFrame(String title) {
+        super(title);
+    }
+}

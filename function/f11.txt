@@ -1,0 +1,16 @@
+public class f11{
+    public static void main(String[] args) {
+        int num1 = 3;
+        int num2 = 7;
+        int num3 = 5;
+
+        boolean isMiddlePoint = isMiddlePoint(num1, num2, num3);
+
+        System.out.println("Is one of the numbers the middle point? " + isMiddlePoint);
+    }
+
+    public static boolean isMiddlePoint(int a, int b, int c) {
+        // Check if 'b' is the middle point
+        return (a < b && b < c) || (c < b && b < a);
+    }
+}
