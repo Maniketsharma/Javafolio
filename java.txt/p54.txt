@@ -1,0 +1,12 @@
+class p54{
+public static void main(String args[]){
+/*
+write a java code to test number is positive or negative*/
+int num=19;
+if(num>0){
+System.out.println("Your number is positive is:"+num);
+}
+else if(num<0){
+System.out.println("You enter negative number");
+}
+}}

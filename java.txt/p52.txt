@@ -1,0 +1,21 @@
+class p52{
+public static void main(String args[]){
+/*
+prog 52 Write a Java program to take three numbers from the user 
+and print the greatest number
+*/
+java.util.Scanner a=new java.util.Scanner(System.in);
+System.out.println("Enter the fist three number :");
+int x=a.nextInt();
+int y=a.nextInt();
+int z=a.nextInt();
+if (x >= y && x >= z)
+    System.out.println("1st value is the largest number."+x);
+
+  else if (y >= x && y>= z)
+      System.out.println("2nd value is the largest number."+y);
+
+  else
+      System.out.println("3rd value is the largest number."+z);
+}
+}
